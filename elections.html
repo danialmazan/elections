@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+
+<meta charset="utf-8" />
+<meta name="generator" content="pandoc" />
+<meta http-equiv="X-UA-Compatible" content="IE=EDGE" />
+
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<meta name="author" content="Daniel Almazan" />
+
+
+<title>Elections</title>
+
+<script>// Pandoc 2.9 adds attributes on both header and div. We remove the former (to
+// be compatible with the behavior of Pandoc < 2.8).
+document.addEventListener('DOMContentLoaded', function(e) {
+  var hs = document.querySelectorAll("div.section[class*='level'] > :first-child");
+  var i, h, a;
+  for (i = 0; i < hs.length; i++) {
+    h = hs[i];
+    if (!/^h[1-6]$/i.test(h.tagName)) continue;  // it should be a header h1-h6
+    a = h.attributes;
+    while (a.length > 0) h.removeAttribute(a[0].name);
+  }
+});
+</script>
+
+<style type="text/css">
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+.display.math{display: block; text-align: center; margin: 0.5rem auto;}
+</style>
+
+
+
+
+
+
+
+
+
+
+
+</head>
+
+<body>
+
+
+
+
+<h1 class="title toc-ignore">Elections</h1>
+<h4 class="author">Daniel Almazan</h4>
+
+
+
+<style>
+@font-face {
+font-family: "Frances";
+src: local("Frances");
+font-display: swap;
+}
+:root {
+--dani-bg: #FAFAF7;
+--dani-panel: #FFFFFF;
+--dani-panel-alt: #F3F4F2;
+--dani-text: #111111;
+--dani-text-soft: #404040;
+--dani-muted: #6B7280;
+--dani-border: #D1D5DB;
+--dani-primary: #145C9E;
+--dani-highlight: #FB6107;
+--dani-heading-font-serif: "Frances", Georgia, serif;
+--dani-body-font: "Geist", system-ui, sans-serif;
+--dani-mono-font: "Roboto Mono", ui-monospace, monospace;
+--dani-radius: 18px;
+}
+* {
+box-sizing: border-box;
+}
+html {
+background:
+radial-gradient(circle at top left, rgba(67, 170, 139, 0.16), transparent 34rem),
+radial-gradient(circle at 92% 8%, rgba(251, 97, 7, 0.10), transparent 28rem),
+var(--dani-bg);
+color: var(--dani-text);
+font-family: var(--dani-body-font);
+font-size: 16px;
+line-height: 1.55;
+min-height: 100%;
+overflow-x: hidden;
+text-rendering: optimizeLegibility;
+}
+body {
+background:
+linear-gradient(rgba(17, 17, 17, 0.035) 1px, transparent 1px),
+linear-gradient(90deg, rgba(17, 17, 17, 0.035) 1px, transparent 1px);
+background-size: 42px 42px;
+color: var(--dani-text);
+margin: 0;
+min-height: 100vh;
+overflow-x: hidden;
+}
+#header,
+body > h1.title,
+body > h4.author {
+display: none;
+}
+.dani-page {
+margin: 0 auto;
+max-width: 1040px;
+padding: clamp(14px, 2.5vw, 30px) clamp(18px, 4vw, 44px) 64px;
+width: 100%;
+}
+.back-link {
+color: var(--dani-primary);
+display: inline-block;
+font-family: var(--dani-body-font);
+font-size: 0.88rem;
+font-weight: 600;
+margin-bottom: 12px;
+text-decoration-color: color-mix(in srgb, var(--dani-primary), transparent 55%);
+text-underline-offset: 0.18em;
+}
+.back-link:hover {
+color: var(--dani-highlight);
+text-decoration-color: currentColor;
+}
+.hero {
+animation: rise-in 680ms ease both;
+max-width: 760px;
+padding: clamp(10px, 2vw, 24px) 0 18px;
+}
+.eyebrow {
+color: var(--dani-muted);
+font-family: var(--dani-mono-font);
+font-size: 0.76rem;
+font-weight: 600;
+letter-spacing: 0.12em;
+text-transform: uppercase;
+}
+.hero h1 {
+color: var(--dani-text);
+font-family: var(--dani-heading-font-serif);
+font-size: clamp(2.2rem, 5.2vw, 4rem);
+font-weight: 700;
+letter-spacing: -0.045em;
+line-height: 0.96;
+margin: 12px 0 20px;
+max-width: 640px;
+}
+.page-subtitle,
+.projects-title {
+color: var(--dani-text);
+font-family: var(--dani-heading-font-serif);
+font-size: clamp(1.12rem, 2vw, 1.6rem);
+letter-spacing: -0.025em;
+line-height: 1;
+margin: 0 0 12px;
+}
+.lead {
+color: var(--dani-text-soft);
+font-size: clamp(1rem, 1.5vw, 1.18rem);
+line-height: 1.5;
+max-width: 680px;
+}
+.projects-title {
+animation: rise-in 680ms ease both;
+animation-delay: 80ms;
+margin-top: 6px;
+}
+.project-list {
+animation: rise-in 680ms ease both;
+animation-delay: 120ms;
+display: grid;
+gap: 18px;
+}
+.project-card {
+background:
+linear-gradient(135deg, rgba(255, 255, 255, 0.72), rgba(243, 244, 242, 0.82)),
+var(--dani-panel);
+border: 1px solid var(--dani-border);
+border-radius: calc(var(--dani-radius) + 8px);
+color: inherit;
+min-width: 0;
+padding: clamp(16px, 2.5vw, 24px) clamp(16px, 3vw, 28px);
+position: relative;
+text-decoration: none;
+transition: background 180ms ease, box-shadow 180ms ease, transform 180ms ease;
+}
+.project-card::after {
+background: var(--dani-highlight);
+border-radius: 999px;
+content: "";
+height: 9px;
+opacity: 0;
+position: absolute;
+right: 24px;
+top: 24px;
+transform: scale(0.35);
+transition: opacity 180ms ease, transform 180ms ease;
+width: 9px;
+}
+.project-card:hover {
+background: var(--dani-panel);
+box-shadow: inset 0 0 0 1px rgba(20, 92, 158, 0.18);
+transform: translateY(-3px);
+}
+.project-card:hover::after {
+opacity: 1;
+transform: scale(1);
+}
+.project-card h3 {
+color: var(--dani-text);
+font-family: var(--dani-heading-font-serif);
+font-size: clamp(0.94rem, 1.15vw, 1.12rem);
+letter-spacing: -0.015em;
+line-height: 1.18;
+margin: 0 0 14px;
+max-width: 34ch;
+overflow-wrap: break-word;
+}
+.project-card p {
+color: var(--dani-text-soft);
+font-size: 0.88rem;
+line-height: 1.5;
+margin: 0;
+max-width: 44rem;
+overflow-wrap: break-word;
+}
+@keyframes rise-in {
+from {
+opacity: 0;
+transform: translateY(18px);
+}
+to {
+opacity: 1;
+transform: translateY(0);
+}
+}
+@media (max-width: 560px) {
+.dani-page {
+padding-left: 14px;
+padding-right: 14px;
+}
+.hero h1 {
+font-size: clamp(1.85rem, 8.5vw, 2.25rem);
+letter-spacing: -0.025em;
+}
+.project-card {
+padding: 16px;
+}
+.project-card h3 {
+font-size: 0.9rem;
+letter-spacing: 0;
+line-height: 1.24;
+max-width: 100%;
+}
+.project-card p {
+font-size: 0.84rem;
+}
+}
+</style>
+<main class="dani-page">
+  <a class="back-link" href="https://danielalmazan.com/">back to home</a>
+
+  <section class="hero" aria-labelledby="page-title">
+    <div class="eyebrow">Daniel Almazan</div>
+    <h1 id="page-title">Elections</h1>
+    <h2 class="page-subtitle">About</h2>
+    <p class="lead">Projects with election data</p>
+  </section>
+
+  <h2 class="projects-title">Projects</h2>
+
+  <section class="project-list" aria-label="Projects">
+    <a class="project-card" href="https://danielalmazan.com/elections/elections_locals_2015_madrid.html">
+      <h3>Local elections in Madrid - 2015</h3>
+      <p>Article with maps and plots created with data from the 2015 local elections in Madrid</p>
+    </a>
+
+    <a class="project-card" href="https://danielalmazan.com/elections/gen_elections_2016_hex.html">
+      <h3>General Election in Spain 2016: hexbin cartogram</h3>
+      <p>A cartogram with an hexagonal grid showing the parlamentarians obtained by each party in each province.</p>
+    </a>
+  </section>
+</main>
+
+
+
+<!-- code folding -->
+
+
+
+</body>
+</html>

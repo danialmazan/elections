@@ -29,8 +29,22 @@ for (e in names(x$elections)) {
 stopifnot(nrow(x$income)==2450, length(unique(x$income$cusec))==2450)
 missing_income <- sum(is.na(x$income$income))
 stopifnot(file.info(file.path(getwd(), "assets/madrid-elections-2023/sections.geojson"))$size > 0)
+atlas_assets <- c(
+  "sections-2023.pmtiles" = "1ebc8ad307c3f5c5b7fda26d178bc3f7e659d1142b075bd7fee49c9ab2ae81ed",
+  "maplibre-gl.js" = "45a9b07a9189ce56054c620a947ccf41e291e58c95e9b61533b740aaa65ee5cb",
+  "pmtiles.js" = "36bcbe1ba97cc07b3fc90cee9cba11729b04e25ec8790cf65a0787d5b38e091b"
+)
+for (asset in names(atlas_assets)) {
+  path <- file.path(getwd(), "assets/madrid-elections-2023", asset)
+  stopifnot(file.exists(path))
+  observed <- unname(tools::md5sum(path))
+  sha256 <- system2("shasum", c("-a", "256", path), stdout=TRUE)
+  sha256 <- strsplit(sha256, " ", fixed=TRUE)[[1]][1]
+  stopifnot(identical(sha256, unname(atlas_assets[[asset]])), nzchar(observed))
+}
 report <- c("Madrid Elections 2023 validation", format(Sys.time(), tz="Europe/Madrid"), checks,
-            sprintf("Income/geometry join: 2450/2450; suppressed or missing income: %d", missing_income))
+            sprintf("Income/geometry join: 2450/2450; suppressed or missing income: %d", missing_income),
+            "Madrid Atlas PMTiles and pinned map libraries: checksums verified")
 dir.create(file.path(project, "validation"), showWarnings=FALSE)
 writeLines(report, file.path(project, "validation/summary.txt"))
 cat(paste(report, collapse="\n"), "\n")

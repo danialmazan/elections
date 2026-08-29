@@ -77,5 +77,6 @@ lang: en
 
 <footer class="page footer"><a href="https://danielalmazan.com/elections/" data-i18n="backElections">← Back to Elections</a><span>© Daniel Almazán</span></footer>
 
-<script src="assets/madrid-elections-2023/leaflet.js"></script>
-<script src="assets/madrid-elections-2023/article.js?v=20260829-2"></script>
+<script src="assets/madrid-elections-2023/maplibre-gl.js"></script>
+<script src="assets/madrid-elections-2023/pmtiles.js"></script>
+<script src="assets/madrid-elections-2023/article.js?v=20260830-1"></script>

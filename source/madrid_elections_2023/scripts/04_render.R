@@ -10,7 +10,7 @@ head <- c("<!doctype html>", "<html lang=\"en\">", "<head>",
   "<meta name=\"description\" content=\"Interactive maps and charts of Madrid's 2023 local, regional and national election results by census section.\">",
   "<title>Madrid Elections 2023 — Daniel Almazán</title>",
   "<link rel=\"stylesheet\" href=\"assets/madrid-elections-2023/leaflet.css\">",
-  "<link rel=\"stylesheet\" href=\"assets/madrid-elections-2023/article.css\">",
+  "<link rel=\"stylesheet\" href=\"assets/madrid-elections-2023/article.css?v=20260829-2\">",
   "</head>", "<body>")
 writeLines(c(head, body, "</body>", "</html>"), output, useBytes=TRUE)
 message("Rendered ", output)

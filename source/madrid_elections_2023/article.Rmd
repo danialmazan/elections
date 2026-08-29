@@ -32,36 +32,38 @@ lang: en
 </div>
 
 <section id="overview"><div class="page">
-  <div class="section-intro"><div><div class="eyebrow">01</div><h2 data-i18n="overviewTitle">Three ballots, one city</h2></div><p data-i18n="overviewCopy">The geography is familiar across the three votes, but the balance changes. The PP was strongest in all three; the national contest was the closest and also drew the highest turnout.</p></div>
+  <div class="section-intro"><div><div class="eyebrow">01</div><h2 data-i18n="overviewTitle">Three ballots, one city</h2></div><p data-i18n="overviewCopy">The geography is familiar across the three votes, but the balance changes. PP was strongest in all three; the national contest was the closest and also drew the highest turnout.</p></div>
   <div id="comparison" class="comparison" aria-live="polite"></div>
 </div></section>
 
 <section id="party-map"><div class="page">
-  <div class="section-intro"><div><div class="eyebrow">02</div><h2 data-i18n="partyMapTitle">Where each party was strongest</h2></div><p data-i18n="partyMapCopy">Select a party to see its share of valid votes. The five-point colour steps stay fixed for the same party as you move between elections.</p></div>
-  <div id="party-controls" class="controls" role="group" aria-label="Party"></div>
-  <figure class="figure"><div class="map-shell" id="party-shell"><div id="party-map-canvas" class="map" aria-label="Party vote-share map"></div><div class="loading" data-i18n="loading">Loading section data…</div><div class="map-toolbar"><button class="map-action fullscreen" data-map="party" data-i18n="fullscreen">Full screen</button></div><button class="map-action map-activate" data-map="party" data-i18n="activateMap">Use map</button><div id="party-legend" class="map-legend"></div></div><figcaption data-i18n="partyMapCaption">Vote share among valid votes, including blank ballots. Each step is five percentage points.</figcaption></figure>
+  <div class="section-intro"><div><div class="eyebrow">02</div><h2 data-i18n="partyMapTitle">Where each party was strongest</h2></div><p data-i18n="partyMapCopy">Select a party to see its share of valid votes.</p></div>
+  <div id="party-controls" class="controls party-controls" role="group" aria-label="Party"></div>
+  <figure class="figure"><div class="map-shell" id="party-shell"><div id="party-map-canvas" class="map" aria-label="Party vote-share map"></div><div class="loading" data-i18n="loading">Loading section data…</div><div class="map-toolbar"><button class="map-action fullscreen" data-map="party" data-i18n="fullscreen">Full screen</button></div><div class="zoom-hint" aria-live="polite" data-i18n="zoomHint">Hold Ctrl and scroll to zoom</div><button class="map-action map-activate" data-map="party" data-i18n="activateMap">Use map</button><div id="party-legend" class="map-legend"></div></div><figcaption data-i18n="partyMapCaption">Vote share among valid votes, including blank ballots.</figcaption></figure>
 </div></section>
 
 <section id="context-map"><div class="page">
   <div class="section-intro"><div><div class="eyebrow">03</div><h2 data-i18n="contextTitle">Participation, winners and income</h2></div><p data-i18n="contextCopy">Turnout and household income reveal another persistent divide through the city. The income layer is the same 2023 measure for all three ballots.</p></div>
   <div id="metric-controls" class="controls" role="group" aria-label="Map metric"><button data-metric="turnout" aria-pressed="true" data-i18n="turnout">Turnout</button><button data-metric="winner" aria-pressed="false" data-i18n="winner">Winning party</button><button data-metric="income" aria-pressed="false" data-i18n="income">Household income</button></div>
-  <figure class="figure"><div class="map-shell" id="context-shell"><div id="context-map-canvas" class="map" aria-label="Context map"></div><div class="loading" data-i18n="loading">Loading section data…</div><div class="map-toolbar"><button class="map-action fullscreen" data-map="context" data-i18n="fullscreen">Full screen</button></div><button class="map-action map-activate" data-map="context" data-i18n="activateMap">Use map</button><div id="context-legend" class="map-legend"></div></div><figcaption data-i18n="contextCaption">Turnout is votes cast divided by census. Income is mean net annual household income; unavailable values would be shown as No data.</figcaption></figure>
+  <figure class="figure"><div class="map-shell" id="context-shell"><div id="context-map-canvas" class="map" aria-label="Context map"></div><div class="loading" data-i18n="loading">Loading section data…</div><div class="map-toolbar"><button class="map-action fullscreen" data-map="context" data-i18n="fullscreen">Full screen</button></div><div class="zoom-hint" aria-live="polite" data-i18n="zoomHint">Hold Ctrl and scroll to zoom</div><button class="map-action map-activate" data-map="context" data-i18n="activateMap">Use map</button><div id="context-legend" class="map-legend"></div></div><figcaption data-i18n="contextCaption">Turnout is votes cast divided by census. Income is mean net annual household income; unavailable values would be shown as No data.</figcaption></figure>
 </div></section>
 
 <section id="turnout-vote"><div class="page">
-  <div class="section-intro"><div><div class="eyebrow">04</div><h2 data-i18n="turnoutVoteTitle">Vote share and turnout</h2></div><p data-i18n="turnoutVoteCopy">The relationship is not uniform across parties. Use the party control above the first map; it also updates the two party charts.</p></div>
+  <div class="section-intro"><div><div class="eyebrow">04</div><h2 data-i18n="turnoutVoteTitle">Vote share and turnout</h2></div><p data-i18n="turnoutVoteCopy">The relationship is not uniform across parties.</p></div>
+  <div id="party-controls-chart1" class="controls party-controls" role="group" aria-label="Party"></div>
   <div class="chart-wrap"><div class="chart-head"><h3 id="chart1-title"></h3><div class="eyebrow" data-i18n="loess">LOESS · span 0.5</div></div><canvas id="chart-turnout" class="chart" role="img"></canvas></div>
-  <p class="insight" data-i18n="turnoutInsight">In the higher-turnout sections, support tended to lean more towards the PP and less towards the PSOE. The other parties follow more uneven paths.</p>
+  <p class="insight" data-i18n="turnoutInsight">In the higher-turnout sections, support tended to lean more towards PP and less towards PSOE. The other parties follow more uneven paths.</p>
 </div></section>
 
 <section id="income-vote"><div class="page">
   <div class="section-intro"><div><div class="eyebrow">05</div><h2 data-i18n="incomeVoteTitle">Vote share and household income</h2></div><p data-i18n="incomeVoteCopy">Each dot is one census section. These are spatial associations, not evidence that income causes a particular vote.</p></div>
+  <div id="party-controls-chart2" class="controls party-controls" role="group" aria-label="Party"></div>
   <div class="chart-wrap"><div class="chart-head"><h3 id="chart2-title"></h3><div class="eyebrow" data-i18n="loess">LOESS · span 0.5</div></div><canvas id="chart-income" class="chart" role="img"></canvas></div>
-  <p class="insight" data-i18n="incomeInsight">The PP’s share rises sharply with section income in every election. PSOE moves in the opposite direction; Más Madrid and Sumar are strongest across a broader middle and lower-income range.</p>
+  <p class="insight" data-i18n="incomeInsight">PP’s share rises sharply with section income in every election. PSOE moves in the opposite direction; Más Madrid and Sumar are strongest across a broader middle and lower-income range.</p>
 </div></section>
 
 <section id="turnout-income"><div class="page">
-  <div class="section-intro"><div><div class="eyebrow">06</div><h2 data-i18n="turnoutIncomeTitle">Turnout and household income</h2></div><p data-i18n="turnoutIncomeCopy">This is the clearest relationship in the article, and it changes little between the three ballots.</p></div>
+  <div class="section-intro"><div><div class="eyebrow">06</div><h2 data-i18n="turnoutIncomeTitle">Turnout and household income</h2></div><p data-i18n="turnoutIncomeCopy">This is the clearest relationship, and it changes little between the three ballots.</p></div>
   <div class="chart-wrap"><div class="chart-head"><h3 id="chart3-title"></h3><div class="eyebrow" data-i18n="loess">LOESS · span 0.5</div></div><canvas id="chart-turnout-income" class="chart" role="img"></canvas></div>
   <p class="insight" data-i18n="turnoutIncomeInsight">Turnout was consistently higher in sections with higher mean household income. The national election lifted participation across most of the city without erasing that gap.</p>
 </div></section>

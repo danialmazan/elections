@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Interactive maps and charts of Madrid's 2023 local, regional and national election results by census section.">
+<title>Madrid Elections 2023 — Daniel Almazán</title>
+<link rel="stylesheet" href="assets/madrid-elections-2023/leaflet.css">
+<link rel="stylesheet" href="assets/madrid-elections-2023/article.css">
+</head>
+<body>
+
+<header class="page site-head">
+  <a class="brand" href="https://danielalmazan.com/">Daniel Almazán</a>
+  <div class="nav-links">
+    <a href="https://danielalmazan.com/" data-i18n="home">Home</a>
+    <a href="https://danielalmazan.com/elections/" data-i18n="electionsNav">Elections</a>
+    <div class="language" aria-label="Language"><button type="button" data-lang="en" aria-pressed="true">EN</button><button type="button" data-lang="es" aria-pressed="false">ES</button></div>
+  </div>
+</header>
+
+<main>
+<div class="page hero">
+  <div class="kicker" data-i18n="kicker">Madrid · Elections · 2023</div>
+  <h1 data-i18n="title">Three ballots, one city</h1>
+  <div class="dek" data-i18n="dek">How Madrid voted in the 2023 local, regional and national elections, section by census section.</div>
+  <div class="date" data-i18n="date">Published August 2026 · Data from 2023</div>
+</div>
+
+<div class="sticky-switch">
+  <div class="page switch-inner">
+    <span class="switch-label" data-i18n="chooseElection">Election shown throughout the article</span>
+    <div class="segmented election-selector" role="group" aria-label="Election">
+      <button type="button" data-election="local" aria-pressed="true" data-i18n="local">Local</button>
+      <button type="button" data-election="regional" aria-pressed="false" data-i18n="regional">Regional</button>
+      <button type="button" data-election="national" aria-pressed="false" data-i18n="national">National</button>
+    </div>
+  </div>
+</div>
+
+<section id="overview"><div class="page">
+  <div class="section-intro"><div><div class="eyebrow">01</div><h2 data-i18n="overviewTitle">Three ballots, one city</h2></div><p data-i18n="overviewCopy">The geography is familiar across the three votes, but the balance changes. The PP was strongest in all three; the national contest was the closest and also drew the highest turnout.</p></div>
+  <div id="comparison" class="comparison" aria-live="polite"></div>
+</div></section>
+
+<section id="party-map"><div class="page">
+  <div class="section-intro"><div><div class="eyebrow">02</div><h2 data-i18n="partyMapTitle">Where each party was strongest</h2></div><p data-i18n="partyMapCopy">Select a party to see its share of valid votes. The five-point colour steps stay fixed for the same party as you move between elections.</p></div>
+  <div id="party-controls" class="controls" role="group" aria-label="Party"></div>
+  <figure class="figure"><div class="map-shell" id="party-shell"><div id="party-map-canvas" class="map" aria-label="Party vote-share map"></div><div class="loading" data-i18n="loading">Loading section data…</div><div class="map-toolbar"><button class="map-action fullscreen" data-map="party" data-i18n="fullscreen">Full screen</button></div><button class="map-action map-activate" data-map="party" data-i18n="activateMap">Use map</button><div id="party-legend" class="map-legend"></div></div><figcaption data-i18n="partyMapCaption">Vote share among valid votes, including blank ballots. Each step is five percentage points.</figcaption></figure>
+</div></section>
+
+<section id="context-map"><div class="page">
+  <div class="section-intro"><div><div class="eyebrow">03</div><h2 data-i18n="contextTitle">Participation, winners and income</h2></div><p data-i18n="contextCopy">Turnout and household income reveal another persistent divide through the city. The income layer is the same 2023 measure for all three ballots.</p></div>
+  <div id="metric-controls" class="controls" role="group" aria-label="Map metric"><button data-metric="turnout" aria-pressed="true" data-i18n="turnout">Turnout</button><button data-metric="winner" aria-pressed="false" data-i18n="winner">Winning party</button><button data-metric="income" aria-pressed="false" data-i18n="income">Household income</button></div>
+  <figure class="figure"><div class="map-shell" id="context-shell"><div id="context-map-canvas" class="map" aria-label="Context map"></div><div class="loading" data-i18n="loading">Loading section data…</div><div class="map-toolbar"><button class="map-action fullscreen" data-map="context" data-i18n="fullscreen">Full screen</button></div><button class="map-action map-activate" data-map="context" data-i18n="activateMap">Use map</button><div id="context-legend" class="map-legend"></div></div><figcaption data-i18n="contextCaption">Turnout is votes cast divided by census. Income is mean net annual household income; unavailable values would be shown as No data.</figcaption></figure>
+</div></section>
+
+<section id="turnout-vote"><div class="page">
+  <div class="section-intro"><div><div class="eyebrow">04</div><h2 data-i18n="turnoutVoteTitle">Vote share and turnout</h2></div><p data-i18n="turnoutVoteCopy">The relationship is not uniform across parties. Use the party control above the first map; it also updates the two party charts.</p></div>
+  <div class="chart-wrap"><div class="chart-head"><h3 id="chart1-title"></h3><div class="eyebrow" data-i18n="loess">LOESS · span 0.5</div></div><canvas id="chart-turnout" class="chart" role="img"></canvas></div>
+  <p class="insight" data-i18n="turnoutInsight">In the higher-turnout sections, support tended to lean more towards the PP and less towards the PSOE. The other parties follow more uneven paths.</p>
+</div></section>
+
+<section id="income-vote"><div class="page">
+  <div class="section-intro"><div><div class="eyebrow">05</div><h2 data-i18n="incomeVoteTitle">Vote share and household income</h2></div><p data-i18n="incomeVoteCopy">Each dot is one census section. These are spatial associations, not evidence that income causes a particular vote.</p></div>
+  <div class="chart-wrap"><div class="chart-head"><h3 id="chart2-title"></h3><div class="eyebrow" data-i18n="loess">LOESS · span 0.5</div></div><canvas id="chart-income" class="chart" role="img"></canvas></div>
+  <p class="insight" data-i18n="incomeInsight">The PP’s share rises sharply with section income in every election. PSOE moves in the opposite direction; Más Madrid and Sumar are strongest across a broader middle and lower-income range.</p>
+</div></section>
+
+<section id="turnout-income"><div class="page">
+  <div class="section-intro"><div><div class="eyebrow">06</div><h2 data-i18n="turnoutIncomeTitle">Turnout and household income</h2></div><p data-i18n="turnoutIncomeCopy">This is the clearest relationship in the article, and it changes little between the three ballots.</p></div>
+  <div class="chart-wrap"><div class="chart-head"><h3 id="chart3-title"></h3><div class="eyebrow" data-i18n="loess">LOESS · span 0.5</div></div><canvas id="chart-turnout-income" class="chart" role="img"></canvas></div>
+  <p class="insight" data-i18n="turnoutIncomeInsight">Turnout was consistently higher in sections with higher mean household income. The national election lifted participation across most of the city without erasing that gap.</p>
+</div></section>
+
+<section id="method"><div class="page">
+  <div class="section-intro"><div><div class="eyebrow">07</div><h2 data-i18n="methodTitle">Sources and method</h2></div><p data-i18n="methodIntro">The analysis is built from official polling-table results, aggregated to the ten-character census-section code.</p></div>
+  <div class="method-grid"><div><h3 data-i18n="definitionsTitle">Definitions</h3><div data-i18n-html="definitions"><p>Turnout is valid plus null votes divided by the electoral census. Party share divides candidature votes by valid votes, including blank ballots. Section winners are calculated from every candidacy; exact ties are resolved in favour of the candidacy with the larger citywide total.</p><p>The 5% rule is an editorial citywide inclusion rule, not the statutory threshold for seats. It includes Podemos–IU in the regional view because it received 5.16% within Madrid city, although its result across the region was below 5%.</p><p>Curves are LOESS fits with <code>span = 0.5</code>. Income and voting are presented as spatial associations; no causal claim is made.</p></div></div>
+  <div><h3 data-i18n="sourcesTitle">Official sources</h3><div class="source-list"><a href="https://datos.madrid.es/dataset/210285-0-elecciones-ayuntamiento-madrid">Madrid City Council · Local election</a><a href="https://www.madrid.es/portales/munimadrid/es/Resultados-electorales-Asamblea-de-Madrid-2023/?vgnextchannel=1a47c2338522a210VgnVCM1000000b205a0aRCRD&vgnextoid=d6205ea540c99810VgnVCM1000001d4a900aRCRD">Madrid City Council · Regional election</a><a href="https://datos.madrid.es/dataset/210278-0-elecciones-congreso-diputados">Madrid City Council · National election cross-check</a><a href="https://infoelectoral.interior.gob.es/minisites/relecinf/">Ministry of the Interior · definitive mesa archives</a><a href="https://www.ine.es/dyngs/INEbase/es/operacion.htm?c=Estadistica_C&cid=1254736177088&idp=1254735976608&menu=resultados">INE · 2023 Household Income Distribution Atlas</a><a href="https://www.ine.es/dyngs/DAB/index.htm?cid=1389">INE · census-section cartography</a></div><p data-i18n="retrieval">Retrieved 29 August 2026. Source URLs, checksums and validation fixtures are stored with the reproducible source.</p></div></div>
+</div></section>
+</main>
+
+<footer class="page footer"><a href="https://danielalmazan.com/elections/" data-i18n="backElections">← Back to Elections</a><span>© Daniel Almazán</span></footer>
+
+<script src="assets/madrid-elections-2023/leaflet.js"></script>
+<script src="assets/madrid-elections-2023/article.js"></script>
+
+</body>
+</html>

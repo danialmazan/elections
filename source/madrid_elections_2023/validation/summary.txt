@@ -1,0 +1,6 @@
+Madrid Elections 2023 validation
+2026-08-29 12:49:31
+local: 2450 unique sections; vote identities balanced; turnout 69.21%; winners PP=2148, MM=159, PSOE=143
+regional: 2450 unique sections; vote identities balanced; turnout 69.42%; winners PP=2204, MM=140, PSOE=106
+national: 2450 unique sections; vote identities balanced; turnout 73.39%; winners PP=1603, PSOE=795, SUMAR=52
+Income/geometry join: 2450/2450; suppressed or missing income: 0

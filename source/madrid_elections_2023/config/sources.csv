@@ -1,0 +1,7 @@
+id,publisher,title,url,retrieved
+local_workbook,Ayuntamiento de Madrid,Elecciones al Ayuntamiento de Madrid 2023 por mesa,https://datos.madrid.es/dataset/210285-0-elecciones-ayuntamiento-madrid,2026-08-29
+regional_workbook,Ayuntamiento de Madrid,Elecciones a la Asamblea de Madrid 2023 por mesa,https://www.madrid.es/portales/munimadrid/es/Resultados-electorales-Asamblea-de-Madrid-2023/?vgnextchannel=1a47c2338522a210VgnVCM1000000b205a0aRCRD&vgnextoid=d6205ea540c99810VgnVCM1000001d4a900aRCRD,2026-08-29
+national_workbook,Ayuntamiento de Madrid,Elecciones al Congreso de los Diputados 2023 por mesa,https://datos.madrid.es/dataset/210278-0-elecciones-congreso-diputados,2026-08-29
+local_ministry,Ministerio del Interior,Resultados definitivos de elecciones municipales 2023 por mesa,https://infoelectoral.interior.gob.es/estaticos/docxl/apliextr/04202305_MESA.zip,2026-08-29
+national_ministry,Ministerio del Interior,Resultados definitivos de elecciones al Congreso 2023 por mesa,https://infoelectoral.interior.gob.es/estaticos/docxl/apliextr/02202307_MESA.zip,2026-08-29
+income_geometry,Instituto Nacional de Estadistica,Atlas de distribucion de renta de los hogares 2023 - secciones censales,https://www.ine.es/servergis/rest/services/ws/ADRH_2023_Renta_media_por_hogar/MapServer/3,2026-08-29

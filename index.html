@@ -10,7 +10,6 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-<meta name="author" content="Daniel Almazan" />
 
 
 <title>Elections</title>
@@ -56,8 +55,6 @@ ul.task-list{list-style: none;}
 
 
 
-<h1 class="title toc-ignore">Elections</h1>
-<h4 class="author">Daniel Almazan</h4>
 
 
 
@@ -133,6 +130,19 @@ text-underline-offset: 0.18em;
 color: var(--dani-highlight);
 text-decoration-color: currentColor;
 }
+.page-topbar { align-items: center; display: flex; gap: 18px; justify-content: space-between; }
+.page-topbar .back-link { margin-bottom: 0; }
+.language-switch {
+align-items: center; background: rgba(255, 255, 255, 0.64); border: 1px solid var(--dani-border);
+border-radius: 999px; display: inline-flex; flex: 0 0 auto; gap: 2px; padding: 3px;
+}
+.language-switch span { color: var(--dani-muted); font-size: 0.72rem; }
+.language-switch button {
+background: transparent; border: 0; border-radius: 999px; color: var(--dani-muted); cursor: pointer;
+font-family: var(--dani-mono-font); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; padding: 6px 8px;
+}
+.language-switch button[aria-pressed="true"] { background: var(--dani-text); color: var(--dani-bg); }
+.language-switch button:focus-visible { outline: 3px solid color-mix(in srgb, var(--dani-highlight), transparent 35%); outline-offset: 2px; }
 .hero {
 animation: rise-in 680ms ease both;
 max-width: 760px;
@@ -156,25 +166,12 @@ line-height: 0.96;
 margin: 12px 0 20px;
 max-width: 640px;
 }
-.page-subtitle,
-.projects-title {
-color: var(--dani-text);
-font-family: var(--dani-heading-font-serif);
-font-size: clamp(1.12rem, 2vw, 1.6rem);
-letter-spacing: -0.025em;
-line-height: 1;
-margin: 0 0 12px;
-}
 .lead {
 color: var(--dani-text-soft);
 font-size: clamp(1rem, 1.5vw, 1.18rem);
 line-height: 1.5;
+margin: 0;
 max-width: 680px;
-}
-.projects-title {
-animation: rise-in 680ms ease both;
-animation-delay: 80ms;
-margin-top: 6px;
 }
 .project-list {
 animation: rise-in 680ms ease both;
@@ -268,37 +265,82 @@ font-size: 0.84rem;
 }
 }
 </style>
-<main class="dani-page">
-  <a class="back-link" href="https://danielalmazan.com/">back to home</a>
+<main class="dani-page" data-page-title-en="Elections — Daniel Almazan" data-page-title-es="Elecciones — Daniel Almazan" data-page-description-en="Projects with election data" data-page-description-es="Proyectos con datos electorales">
+  <div class="page-topbar">
+    <a class="back-link" href="https://danielalmazan.com/" data-i18n-href-en="https://danielalmazan.com/" data-i18n-href-es="https://danielalmazan.com/?lang=es" data-i18n-en="back to home" data-i18n-es="volver al inicio">back to home</a>
+    <div class="language-switch" role="group" aria-label="Language" data-i18n-aria-label-en="Language" data-i18n-aria-label-es="Idioma">
+  <button type="button" data-lang="en" aria-pressed="true">EN</button>
+  <span aria-hidden="true">/</span>
+  <button type="button" data-lang="es" aria-pressed="false">ES</button>
+</div>
+  </div>
 
   <section class="hero" aria-labelledby="page-title">
     <div class="eyebrow">Daniel Almazan</div>
-    <h1 id="page-title">Elections</h1>
-    <h2 class="page-subtitle">About</h2>
-    <p class="lead">Projects with election data</p>
+    <h1 id="page-title" data-i18n-en="Elections" data-i18n-es="Elecciones">Elections</h1>
+    <p class="lead" data-i18n-en="Projects with election data" data-i18n-es="Proyectos con datos electorales">Projects with election data</p>
   </section>
 
-  <h2 class="projects-title">Projects</h2>
-
-  <section class="project-list" aria-label="Projects">
-<a class="project-card" href="https://danielalmazan.com/elections/madrid_elections_2023.html">
-  <h3>Madrid elections 2023: three ballots, one city</h3>
-  <p>Interactive maps and charts comparing Madrid’s 2023 local, regional and national elections, section by census section.</p>
+  <section class="project-list" aria-label="Projects" data-i18n-aria-label-en="Projects" data-i18n-aria-label-es="Proyectos">
+<a class="project-card" href="https://danielalmazan.com/elections/madrid_elections_2023.html" data-i18n-href-en="https://danielalmazan.com/elections/madrid_elections_2023.html" data-i18n-href-es="https://danielalmazan.com/elections/madrid_elections_2023.html?lang=es">
+  <h3 data-i18n-en="Madrid elections 2023: three ballots, one city" data-i18n-es="Tres urnas, una ciudad">Madrid elections 2023: three ballots, one city</h3>
+  <p data-i18n-en="Interactive maps and charts comparing Madrid’s 2023 local, regional and national elections, section by census section." data-i18n-es="Cómo votó Madrid en las elecciones municipales, autonómicas y generales de 2023, sección censal a sección censal.">Interactive maps and charts comparing Madrid’s 2023 local, regional and national elections, section by census section.</p>
 </a>
-<a class="project-card" href="https://danielalmazan.com/elections/general-elections-hex/">
-  <h3>Spain general elections: hex cartogram</h3>
-  <p>Interactive hex cartogram exploring party results and seats by province across Spain’s 2023 and 2019 general elections.</p>
+<a class="project-card" href="https://danielalmazan.com/elections/general-elections-hex/?lang=en" data-i18n-href-en="https://danielalmazan.com/elections/general-elections-hex/?lang=en" data-i18n-href-es="https://danielalmazan.com/elections/general-elections-hex/?lang=es">
+  <h3 data-i18n-en="Spain general elections: hex cartogram" data-i18n-es="España, escaño a escaño">Spain general elections: hex cartogram</h3>
+  <p data-i18n-en="Interactive hex cartogram exploring party results and seats by province across Spain’s 2023 and 2019 general elections." data-i18n-es="Cada hexágono es un diputado electo.">Interactive hex cartogram exploring party results and seats by province across Spain’s 2023 and 2019 general elections.</p>
 </a>
-<a class="project-card" href="https://danielalmazan.com/elections/elections_locals_2015_madrid.html">
-  <h3>Local elections in Madrid - 2015</h3>
-  <p>Article with maps and plots created with data from the 2015 local elections in Madrid</p>
+<a class="project-card" href="https://danielalmazan.com/elections/elections_locals_2015_madrid.html" data-i18n-href-en="https://danielalmazan.com/elections/elections_locals_2015_madrid.html" data-i18n-href-es="https://danielalmazan.com/elections/elections_locals_2015_madrid_es.html">
+  <h3 data-i18n-en="Local elections in Madrid - 2015" data-i18n-es="Elecciones locales en Madrid — 2015">Local elections in Madrid - 2015</h3>
+  <p data-i18n-en="Article with maps and plots created with data from the 2015 local elections in Madrid" data-i18n-es="Artículo con mapas y gráficos creados con datos de las elecciones municipales de 2015 en Madrid.">Article with maps and plots created with data from the 2015 local elections in Madrid</p>
 </a>
-<a class="project-card" href="https://danielalmazan.com/elections/gen_elections_2016_hex.html">
-  <h3>General Election in Spain 2016: hexbin cartogram</h3>
-  <p>A cartogram with an hexagonal grid showing the parlamentarians obtained by each party in each province.</p>
+<a class="project-card" href="https://danielalmazan.com/elections/gen_elections_2016_hex.html" data-i18n-href-en="https://danielalmazan.com/elections/gen_elections_2016_hex.html" data-i18n-href-es="https://danielalmazan.com/elections/gen_elections_2016_hex.html">
+  <h3 data-i18n-en="General Election in Spain 2016: hexbin cartogram" data-i18n-es="Elecciones generales de España 2016: cartograma hexagonal">General Election in Spain 2016: hexbin cartogram</h3>
+  <p data-i18n-en="A cartogram with an hexagonal grid showing the parlamentarians obtained by each party in each province." data-i18n-es="Cartograma con una cuadrícula hexagonal que muestra los diputados obtenidos por cada partido en cada provincia.">A cartogram with an hexagonal grid showing the parlamentarians obtained by each party in each province.</p>
 </a>
   </section>
 </main>
+<script>
+(function () {
+  "use strict";
+  function languageFromUrl() {
+    return new URLSearchParams(window.location.search).get("lang") === "es" ? "es" : "en";
+  }
+  function setLanguage(language, updateUrl) {
+    document.documentElement.lang = language;
+    document.querySelectorAll("[data-i18n-en][data-i18n-es]").forEach(function (element) {
+      element.textContent = element.getAttribute("data-i18n-" + language);
+    });
+    document.querySelectorAll("[data-i18n-href-en][data-i18n-href-es]").forEach(function (element) {
+      element.setAttribute("href", element.getAttribute("data-i18n-href-" + language));
+    });
+    document.querySelectorAll("[data-i18n-aria-label-en][data-i18n-aria-label-es]").forEach(function (element) {
+      element.setAttribute("aria-label", element.getAttribute("data-i18n-aria-label-" + language));
+    });
+    document.querySelectorAll("[data-lang]").forEach(function (button) {
+      button.setAttribute("aria-pressed", String(button.getAttribute("data-lang") === language));
+    });
+    var page = document.querySelector("[data-page-title-en][data-page-title-es]");
+    if (page) {
+      document.title = page.getAttribute("data-page-title-" + language);
+      var meta = document.querySelector("meta[name=description]");
+      var description = page.getAttribute("data-page-description-" + language);
+      if (meta && description) meta.setAttribute("content", description);
+    }
+    if (updateUrl) {
+      var url = new URL(window.location.href);
+      if (language === "es") url.searchParams.set("lang", "es");
+      else url.searchParams.delete("lang");
+      history.replaceState({}, "", url);
+    }
+  }
+  document.querySelectorAll("[data-lang]").forEach(function (button) {
+    button.addEventListener("click", function () { setLanguage(button.getAttribute("data-lang"), true); });
+  });
+  window.addEventListener("popstate", function () { setLanguage(languageFromUrl(), false); });
+  setLanguage(languageFromUrl(), false);
+}());
+</script>
 
 
 

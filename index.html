@@ -285,17 +285,97 @@ font-size: 0.84rem;
 <a class="project-card" href="https://danielalmazan.com/debisacarmasvotos/" data-i18n-href-en="https://danielalmazan.com/debisacarmasvotos/" data-i18n-href-es="https://danielalmazan.com/debisacarmasvotos/">
   <h3 data-i18n-en="Debí sacar más votos" data-i18n-es="Debí sacar más votos">Debí sacar más votos</h3>
   <p data-i18n-en="Explore polls and model votes, seats, joint lists and withdrawals for Spain’s Congress. In Spanish." data-i18n-es="Explora las encuestas, ajusta el voto y simula escaños, listas conjuntas y retiradas para el Congreso.">Explore polls and model votes, seats, joint lists and withdrawals for Spain’s Congress. In Spanish.</p>
+  <time class="freshness-badge" datetime="2026-10-24" data-age="recent" aria-label="Page last uploaded / updated: 24 October 2026" data-i18n-aria-label-en="Page last uploaded / updated: 24 October 2026" data-i18n-aria-label-es="Última publicación / actualización de la página: 24 de octubre de 2026">
+    <span class="badge-date" data-i18n-en="Oct-26" data-i18n-es="Oct-26">Oct-26</span>
+    <span class="badge-tooltip" aria-hidden="true" data-i18n-en="Page last uploaded / updated: 24 October 2026" data-i18n-es="Última publicación / actualización de la página: 24 de octubre de 2026">Page last uploaded / updated: 24 October 2026</span>
+  </time>
 </a>
 <a class="project-card" href="https://danielalmazan.com/elections/madrid_elections_2023.html" data-i18n-href-en="https://danielalmazan.com/elections/madrid_elections_2023.html" data-i18n-href-es="https://danielalmazan.com/elections/madrid_elections_2023.html?lang=es">
   <h3 data-i18n-en="Madrid elections 2023: three ballots, one city" data-i18n-es="Tres urnas, una ciudad">Madrid elections 2023: three ballots, one city</h3>
   <p data-i18n-en="Interactive maps and charts comparing Madrid’s 2023 local, regional and national elections, section by census section." data-i18n-es="Cómo votó Madrid en las elecciones municipales, autonómicas y generales de 2023, sección censal a sección censal.">Interactive maps and charts comparing Madrid’s 2023 local, regional and national elections, section by census section.</p>
+  <time class="freshness-badge" datetime="2026-08-30" data-age="recent" aria-label="Page last uploaded / updated: 30 August 2026" data-i18n-aria-label-en="Page last uploaded / updated: 30 August 2026" data-i18n-aria-label-es="Última publicación / actualización de la página: 30 de agosto de 2026">
+    <span class="badge-date" data-i18n-en="Aug-26" data-i18n-es="Ago-26">Aug-26</span>
+    <span class="badge-tooltip" aria-hidden="true" data-i18n-en="Page last uploaded / updated: 30 August 2026" data-i18n-es="Última publicación / actualización de la página: 30 de agosto de 2026">Page last uploaded / updated: 30 August 2026</span>
+  </time>
 </a>
 <a class="project-card" href="https://danielalmazan.com/elections/general-elections-hex/?lang=en" data-i18n-href-en="https://danielalmazan.com/elections/general-elections-hex/?lang=en" data-i18n-href-es="https://danielalmazan.com/elections/general-elections-hex/?lang=es">
   <h3 data-i18n-en="Spain general elections: hex cartogram" data-i18n-es="España, escaño a escaño">Spain general elections: hex cartogram</h3>
   <p data-i18n-en="Interactive hex cartogram exploring party results and seats by province across Spain’s 2023 and 2019 general elections." data-i18n-es="Cada hexágono es un diputado electo.">Interactive hex cartogram exploring party results and seats by province across Spain’s 2023 and 2019 general elections.</p>
+  <time class="freshness-badge" datetime="2026-09-04" data-age="recent" aria-label="Page last uploaded / updated: 4 September 2026" data-i18n-aria-label-en="Page last uploaded / updated: 4 September 2026" data-i18n-aria-label-es="Última publicación / actualización de la página: 4 de septiembre de 2026">
+    <span class="badge-date" data-i18n-en="Sep-26" data-i18n-es="Sep-26">Sep-26</span>
+    <span class="badge-tooltip" aria-hidden="true" data-i18n-en="Page last uploaded / updated: 4 September 2026" data-i18n-es="Última publicación / actualización de la página: 4 de septiembre de 2026">Page last uploaded / updated: 4 September 2026</span>
+  </time>
 </a>
   </section>
 </main>
+<style>
+
+.freshness-badge {
+--badge-ink: #225638;
+--badge-fill: #e1f1e5;
+align-items: center;
+background: var(--badge-fill);
+border: 1px solid transparent;
+border-radius: 999px;
+color: var(--badge-ink);
+display: inline-flex;
+font-family: var(--dani-mono-font, ui-monospace, monospace);
+font-size: 10px;
+font-variant-numeric: tabular-nums;
+font-weight: 600;
+justify-content: center;
+letter-spacing: -.02em;
+line-height: 1;
+padding: 6px 9px;
+position: absolute;
+right: clamp(16px, 3vw, 28px);
+top: clamp(16px, 2.5vw, 24px);
+white-space: nowrap;
+z-index: 1;
+}
+.freshness-badge[data-age="year"] { --badge-ink: #405e46; --badge-fill: #eaf0e7; }
+.freshness-badge[data-age="previous"] { --badge-ink: #526056; --badge-fill: #edf0eb; }
+.freshness-badge[data-age="archive"] { --badge-ink: #5d646c; --badge-fill: #eeeff0; }
+.project-card h3 { padding-right: 78px; }
+.project-card::after { display: none; }
+.project-card:focus-visible {
+outline: 3px solid var(--dani-primary);
+outline-offset: -3px;
+}
+.badge-tooltip {
+background: #253b2d;
+border-radius: 5px;
+box-shadow: 0 3px 10px #1112;
+color: white;
+font-family: var(--dani-body-font, system-ui, sans-serif);
+font-size: 11px;
+font-weight: 400;
+letter-spacing: 0;
+line-height: 1.4;
+max-width: min(270px, calc(100vw - 64px));
+opacity: 0;
+padding: 8px 10px;
+pointer-events: none;
+position: absolute;
+right: 0;
+top: calc(100% + 7px);
+transform: translateY(-3px);
+transition: opacity 140ms ease, transform 140ms ease;
+white-space: normal;
+width: max-content;
+}
+.freshness-badge:hover .badge-tooltip, .project-card:focus-visible .badge-tooltip {
+opacity: 1;
+transform: none;
+}
+@media (max-width: 560px) {
+.project-card h3 { padding-right: 76px; }
+.freshness-badge { right: 16px; top: 17px; }
+}
+@media (prefers-reduced-motion: reduce) {
+.badge-tooltip { transition: none; }
+}
+</style>
 <script>
 (function () {
   "use strict";
@@ -335,6 +415,27 @@ font-size: 0.84rem;
   });
   window.addEventListener("popstate", function () { setLanguage(languageFromUrl(), false); });
   setLanguage(languageFromUrl(), false);
+}());
+</script>
+<script>
+/* Labels refer to page uploads/updates. Dataset periods are never inputs. */
+(function () {
+  "use strict";
+  function updateAge() {
+    var now = new Date();
+    var currentMonth = now.getFullYear() * 12 + now.getMonth();
+    document.querySelectorAll("time.freshness-badge[datetime]").forEach(function (badge) {
+      var parts = badge.getAttribute("datetime").split("-").map(Number);
+      var age = currentMonth - (parts[0] * 12 + parts[1] - 1);
+      badge.setAttribute("data-age", age <= 3 ? "recent" : age <= 12 ? "year" : age <= 24 ? "previous" : "archive");
+    });
+  }
+  updateAge();
+  document.addEventListener("visibilitychange", function () {
+    if (!document.hidden) updateAge();
+  });
+  // A catalogue left open across a month boundary should also age correctly.
+  window.setInterval(updateAge, 60 * 60 * 1000);
 }());
 </script>
 
